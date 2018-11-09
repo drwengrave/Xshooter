@@ -393,8 +393,6 @@ class PipelineManager:
     def RunPipeline(self):
         #self.CurrentRecipe is set '' from start. It can have another
         #value if the pipeline was started from a restart file
-        print 'PipelineManager, by Martin Sparre, Dark Cosmology Centre, 2011.\n'
-
         if os.path.exists(self.OutputDir) == False:
             print 'Directory with name '+self.OutputDir+' does not exist.'
             commands.getoutput('mkdir '+self.OutputDir)

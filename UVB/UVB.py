@@ -6,9 +6,8 @@
 from PipelineManager import *
 import glob
 
-
 UVB = PipelineManager()
-#UVB.SetOutputDir('Output')
+UVB.SetOutputDir('Output')
 
 
 ############################################################
@@ -89,7 +88,6 @@ UVB.SetFiles('MASTER_FLAT_SLIT_UVB',['static_calibs/MASTER_FLAT_SLIT_UVB.fits'])
 UVB.SetFiles('ORDER_TAB_EDGES_SLIT_UVB',['static_calibs/ORDER_TAB_EDGES_SLIT_UVB.fits'])
 UVB.SetFiles('XSH_MOD_CFG_OPT_2D_UVB',['static_calibs/XSH_MOD_CFG_OPT_2D_UVB.fits'])
 UVB.SetFiles('RESPONSE_MERGE1D_SLIT_UVB',['static_calibs/RESPONSE_MERGE1D_SLIT_UVB.fits'])
-UVB.SetFiles('MASTER_BP_MAP_UVB',['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/BP_MAP_RP_UVB_1x2.fits'])
 UVB.SetFiles('DISP_TAB_UVB',['static_calibs/DISP_TAB_UVB.fits'])
 UVB.SetFiles('OBJECT_SLIT_NOD_UVB', glob.glob('test_data/*'))
 
@@ -100,6 +98,7 @@ UVB.SetFiles("XSH_MOD_CFG_TAB_UVB",["/opt/local/share/esopipes/datastatic/xshoo-
 UVB.SetFiles("FLUX_STD_CATALOG_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_star_catalog_uvb.fits'])
 UVB.SetFiles("ATMOS_EXT_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_paranal_extinct_model_uvb.fits'])
 UVB.SetFiles("SKY_LINE_LIST_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SKY_LINE_LIST_UVB.fits'])
+UVB.SetFiles('MASTER_BP_MAP_UVB',['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/BP_MAP_RP_UVB_1x2.fits'])
 
 #Run
 UVB.RunPipeline()
