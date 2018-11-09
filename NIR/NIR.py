@@ -32,7 +32,7 @@ NIR.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_NIR", "?", "-" , "-")
 NIR.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
 NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
-# NIR.EnableRecipe(SOFFileName)
+NIR.EnableRecipe(SOFFileName)
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
