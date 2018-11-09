@@ -10,28 +10,6 @@ UVB = PipelineManager()
 UVB.SetOutputDir('Output')
 
 
-############################################################
-###  XSH_SCIRED_SLIT_OFFSET
-############################################################
-
-EsorexName='xsh_scired_slit_offset'
-SOFFileName = EsorexName
-
-UVB.DeclareNewRecipe(EsorexName)
-UVB.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_OFFSET_UVB", "1..n", "any", "100k")
-UVB.DeclareRecipeInputTag(SOFFileName, "SKY_SLIT_UVB", "1..n", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BIAS_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_UVB", "?", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_UVB", "?", "1x1", "400k")
-UVB.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
-UVB.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
-
-#UVB.EnableRecipe(SOFFileName)
 
 ############################################################
 ###  XSH_SCIRED_SLIT_NOD
@@ -82,14 +60,18 @@ UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 ###  INPUT-FILES
 ############################################################
 
-#CALIB and RAW
+# Input files
+UVB.SetFiles('OBJECT_SLIT_NOD_UVB', glob.glob('target/*'))
+# UVB.SetFiles('OBJECT_SLIT_STARE_UVB', glob.glob('test_data/*'))
+
+
+# Static CALIBs
 UVB.SetFiles('MASTER_BIAS_UVB',['static_calibs/MASTER_BIAS_UVB.fits'])
 UVB.SetFiles('MASTER_FLAT_SLIT_UVB',['static_calibs/MASTER_FLAT_SLIT_UVB.fits'])
 UVB.SetFiles('ORDER_TAB_EDGES_SLIT_UVB',['static_calibs/ORDER_TAB_EDGES_SLIT_UVB.fits'])
 UVB.SetFiles('XSH_MOD_CFG_OPT_2D_UVB',['static_calibs/XSH_MOD_CFG_OPT_2D_UVB.fits'])
 UVB.SetFiles('RESPONSE_MERGE1D_SLIT_UVB',['static_calibs/RESPONSE_MERGE1D_SLIT_UVB.fits'])
 UVB.SetFiles('DISP_TAB_UVB',['static_calibs/DISP_TAB_UVB.fits'])
-UVB.SetFiles('OBJECT_SLIT_NOD_UVB', glob.glob('test_data/*'))
 
 #REF-files:
 UVB.SetFiles("SPECTRAL_FORMAT_TAB_UVB",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SPECTRAL_FORMAT_TAB_UVB.fits"])
