@@ -7,16 +7,14 @@ import commands
 import os.path
 import pickle
 import sys
-import pyfits
+from astropy.io import fits
+
 
 #some standard esorex-options:
 ESOREX_EXE = 'esorex'
 ESOREX_OPTIONS ='--suppress-prefix=FALSE' #'--suppress-prefix=FALSE' is necessary. If it is removed the output-products will not be detected
 RECIPE_OPTIONS = ''#'--keep-temp=yes' #This is optional (for quality checks...)
 
-
-#Use this on (some) DARK-computers:
-#ESOREX_OPTIONS += #""" --recipe-dir='/local/opt/pipe/pipe/lib/esopipes-plugins/xsh-1.2.2'"""
 
 def SaveToRestartFile(PickleFile,Object):
     f=open(PickleFile, 'wb')
@@ -126,7 +124,7 @@ class Recipe:
         else:
             Type = ''
 
-        
+
         self.InputTags.append(InputTag(InputTagName, Nfiles, Binning, ReadOut,Type))
 
     def GetRecipeName(self):
@@ -161,7 +159,7 @@ class Recipe:
         else:
             Arm = 'Arm'
             print '\tcouldnt determine ARM. Files.keys()[0]=', Files.keys()[0]
-            
+
         self.Arm = Arm
 
         #Determine Set BinX_match, BinY_match, ReadOut_match
@@ -178,7 +176,7 @@ class Recipe:
             BinX_match = self.GetBinX_match()
             BinY_match = self.GetBinY_match()
             ReadOut_match = self.GetReadOut_match()
-            
+
         else:
             print '\tSyntax Error: 98w734bkfs'
 
@@ -250,7 +248,7 @@ class Recipe:
                     print '\n\tA necessary file is missing for tag '+Tag.GetTagName() + '. Esorex disabled.'
                     RunEsorex = False
                 else:
-                    print '\n\tAn optional file is missing for tag '+Tag.GetTagName() + '.\n' 
+                    print '\n\tAn optional file is missing for tag '+Tag.GetTagName() + '.\n'
                 continue
 
             #write to sof-file:
@@ -274,7 +272,7 @@ class Recipe:
             if self.GetEsorexRecipeName() =='xsh_mbias' or self.GetEsorexRecipeName() =='xsh_mflat':
                 print '\tDont worry about the warning above if you dont need '+self.GetEsorexRecipeName() + ' to be executed for binning '+ self.GetBinX_match() +'x'+self.GetBinY_match() + ' and readout ' + self.GetReadOut_match() +'.\n'
                 print '\tIf you need this recipe to be executed the missing files should be provided (use the SetFiles(...) function).'
-                
+
         if self.GetDisableEsorex() == True:
             print "\tYou have disabled esorex for this recipe. Esorex will not be executed."
             RunEsorex = False
@@ -295,18 +293,18 @@ class Recipe:
                 print '\tRenaming Outputfiles:'
 
             for OutputFile in Output_string.split():
-                OutputFileHeader =  pyfits.getheader(OutputFile)
+                OutputFileHeader =  fits.getheader(OutputFile)
                 if 'ESO PRO CATG' in OutputFileHeader.keys():
                     NewSofTag = OutputFileHeader['ESO PRO CATG']
                 else:
                     print 'Something wrong when determining ESO PRO CATG... u8q3209ejncvsd'
                     sys.exit()
-                
+
                 FitsFileName = self.Manager.GetOutputDir() + self.GetRecipeName() +'_' + NewSofTag + '_' + Arm + '_' + BinX_match + 'x' + BinY_match + '_' + ReadOut_match + '.fits'
                 commands.getoutput('mv '+OutputFile+' '+FitsFileName)
 
                 print '\t'+OutputFile+' -> '+FitsFileName
-                
+
                 #put the fits-file into the Files-dictionary
                 if NewSofTag not in Files.keys():
                     Files[NewSofTag] = [TFile(FitsFileName,NewSofTag)]
@@ -378,7 +376,7 @@ class PipelineManager:
 
     def StopAfterRecipe(self, RecipeName):
         self.Recipes[RecipeName].SetStopAfterRecipe(True)
-        
+
     def ResetAllRecipes(self):
         self.Recipes = {}
         self.RecipeOrder = []
@@ -401,7 +399,7 @@ class PipelineManager:
             print 'Directory with name '+self.OutputDir+' does not exist.'
             commands.getoutput('mkdir '+self.OutputDir)
             print 'Directory with name '+ self.OutputDir +' has now been created.\n'
-            
+
 
 
         print 'Pipeline started.'
@@ -415,7 +413,7 @@ class PipelineManager:
             print "\nStart:", self.CurrentRecipe.GetRecipeName()
             self.Files = self.CurrentRecipe.Execute(self.Files)
 
-            SaveToRestartFile(self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart',self)#save to pickle-file       
+            SaveToRestartFile(self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart',self)#save to pickle-file
             print '\tRestartfile saved: ' + self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart'
             print "End:", self.CurrentRecipe.GetRecipeName()+'\n'
 
@@ -428,7 +426,7 @@ class PipelineManager:
                 print "\nStart:", self.CurrentRecipe.GetRecipeName()
                 self.Files = self.CurrentRecipe.Execute(self.Files)
 
-                SaveToRestartFile(self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart',self)#save to pickle-file       
+                SaveToRestartFile(self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart',self)#save to pickle-file
                 print '\tRestartfile saved: ' + self.OutputDir + self.CurrentRecipe.GetRecipeName()+'_'+ self.CurrentRecipe.GetArm() +'.restart'
                 print "End:", self.CurrentRecipe.GetRecipeName()+'\n'
 
@@ -445,9 +443,9 @@ class TFile:
 
         self.SofTag = SofTag
         self.FitsName = FitsName
-        
-        ThisHeader =  pyfits.getheader(FitsName)
-        
+
+        ThisHeader =  fits.getheader(FitsName)
+
         #Binning X
         if 'ESO DET WIN1 BINX' in ThisHeader.keys():
             self.BinX = str(ThisHeader['ESO DET WIN1 BINX'])
@@ -470,16 +468,16 @@ class TFile:
             #print "Warning: ESO SEQ ARM not in header"
             self.ARM = ""
             #sys.exit()
-            
-        
+
+
         #Readout
         if 'ESO DET READ CLOCK' in ThisHeader.keys():
             self.ReadOut = str(ThisHeader['ESO DET READ CLOCK']).split('/')[0]
         else:
             #print "Warning: ESO DET READ CLOCK not in header"
             self.ReadOut = ""
-            
-        
+
+
     def GetSofTag(self):
         return self.SofTag
 
