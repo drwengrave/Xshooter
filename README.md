@@ -2,19 +2,16 @@ These rutines along with associated static calibration files should allow the qu
 
 Put your science files in the arm/target directory and run the scripts.
 
+This script relies on Python 2.7 and astropy. To setup with conda do:
+
+conda create -n py27 python=2.7
+
+conda install astropy
+
+You should then be able to run the scripts using:
+
+python NIR.py
 
 
 
-
-### Old README
-
-This code provides a framework for reducing spectroscopic observations taken by the X-shooter spectrograph at the Very Large Telescope. The Python-code wraps recipes developed by the European Southern Observatory and runs the full X-shooter data reduction pipeline. The code offers full flexibility in terms of what data reduction recipes to include, and which calibration files to use. During the data reduction chain restart-files are saved, which makes it possible to restart at any step in the chain.
-
-See documentation in doc/PipelineManager_doc.pdf
-
-
-This code is released under the GNU General Public License, see http://www.gnu.org/copyleft/gpl.html
-
-Author: Martin Sparre. martinsparre.com
-
-Thanks to my collaborators who have contributed to testing and providing feedback on this code: Johannes Zabl, Jens-Kristian Krogager, Johan Fynbo, Dong Xu, Mikkel Stockmann, Teddy Frederiksen, Steve Schulze.
+See https://github.com/martinsparre/XSHPipelineManager for the original source. All credit for this goes to Martin Sparre. 
