@@ -4,7 +4,9 @@ Put your science files in the arm/target directory and run the scripts.
 
 This script relies on Python 2.7 and astropy. To setup with conda do:
 
+```
 conda create -n py27 python=2.7
+```
 
 conda install astropy
 
