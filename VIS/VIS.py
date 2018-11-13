@@ -5,6 +5,7 @@
 
 from PipelineManager import *
 import glob
+import numpy as np
 
 VIS = PipelineManager()
 VIS.SetOutputDir('Output')
@@ -62,6 +63,7 @@ VIS.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 # Input files
 files = glob.glob('test_data/*') # /target
+# files = glob.glob('target/') # /target
 
 # Object files
 # VIS.SetFiles('OBJECT_SLIT_STARE_VIS', files)
@@ -86,3 +88,14 @@ VIS.SetFiles('MASTER_BP_MAP_VIS',['static_calibs/BP_MAP_RP_VIS_1x2.fits'])
 
 #Run
 VIS.RunPipeline()
+
+# Convert 1D file to ASCII
+out1d = glob.glob("Output/*FLUX_MERGE1D_VIS*.fits")
+fitsfile = fits.open(out1d[0])
+wave = 10.*(np.arange((np.shape(fitsfile[0].data)[0]))*fitsfile[0].header['CDELT1']+fitsfile[0].header['CRVAL1'])
+np.savetxt("Output/VIS_ASCII1D_spectrum.dat", list(zip(wave, fitsfile[0].data, fitsfile[1].data)), fmt='%1.4e %1.4e %1.4e')
+
+
+
+
+

@@ -70,7 +70,8 @@ NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 ############################################################
 
 # Input files
-files = glob.glob('test_data/JH/*') # /target
+# files = glob.glob('test_data/JH/*') # /target
+files = glob.glob('target/') # /target
 
 # Get exptime:
 exptime = [0]*len(files)
@@ -131,3 +132,11 @@ NIR.SetFiles('MASTER_BP_MAP_NIR',['%sBP_MAP_RP_NIR.fits'%static_path])
 
 #Run
 NIR.RunPipeline()
+
+# Convert 1D file to ASCII
+out1d = glob.glob("Output/*FLUX_MERGE1D_NIR*.fits")
+fitsfile = fits.open(out1d[0])
+wave = 10.*(np.arange((np.shape(fitsfile[0].data)[0]))*fitsfile[0].header['CDELT1']+fitsfile[0].header['CRVAL1'])
+np.savetxt("Output/NIR_ASCII1D_spectrum.dat", list(zip(wave, fitsfile[0].data, fitsfile[1].data)), fmt='%1.4e %1.4e %1.4e')
+
+

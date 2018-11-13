@@ -61,7 +61,8 @@ UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 ############################################################
 
 # Input files
-files = glob.glob('test_data/*') # /target
+# files = glob.glob('test_data/*') # /target
+files = glob.glob('target/') # /target
 
 # Object files
 # UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
@@ -86,3 +87,12 @@ UVB.SetFiles('MASTER_BP_MAP_UVB',['static_calibs/BP_MAP_RP_UVB_1x2.fits'])
 
 #Run
 UVB.RunPipeline()
+
+# Convert 1D file to ASCII
+out1d = glob.glob("Output/*FLUX_MERGE1D_UVB*.fits")
+fitsfile = fits.open(out1d[0])
+wave = 10.*(np.arange((np.shape(fitsfile[0].data)[0]))*fitsfile[0].header['CDELT1']+fitsfile[0].header['CRVAL1'])
+np.savetxt("Output/UVB_ASCII1D_spectrum.dat", list(zip(wave, fitsfile[0].data, fitsfile[1].data)), fmt='%1.4e %1.4e %1.4e')
+
+
+
