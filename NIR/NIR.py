@@ -6,6 +6,7 @@
 
 from PipelineManager import *
 import glob
+from astropy.io import fits
 
 NIR = PipelineManager()
 NIR.SetOutputDir('Output')
@@ -54,6 +55,7 @@ NIR.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
 NIR.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_NIR", "?", "-" , "-")
 NIR.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
 NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
+
 # NIR.EnableRecipe(SOFFileName)
 
 #NIR.SetRecipeOptions(SOFFileName, "--sky-method=MEDIAN")#MEDIAN is more stable than bspline
@@ -68,26 +70,64 @@ NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 ############################################################
 
 # Input files
-NIR.SetFiles('OBJECT_SLIT_NOD_NIR', glob.glob('target/*'))
-# NIR.SetFiles('OBJECT_SLIT_STARE_NIR', glob.glob('test_data/*'))
+files = glob.glob('test_data/JH/*') # /target
+
+# Get exptime:
+exptime = [0]*len(files)
+for ii in range(len(files)):
+    exptime[ii] = fits.open(files[ii])[0].header["EXPTIME"]
+
+if not exptime.count(exptime[0]) == len(exptime):
+    raise TypeError("Input image list does not have the same exposure times.")
+
+exptime = int(exptime[0])
+
+# Get slit
+slit = [0]*len(files)
+for ii in range(len(files)):
+    slit[ii] = fits.open(files[ii])[0].header["HIERARCH ESO INS OPTI5 NAME"]
+
+if not slit.count(slit[0]) == len(slit):
+    raise TypeError("Input image list does not use the same slit.")
+
+JH = slit[0].endswith('JH')
+
+# Object files
+# NIR.SetFiles('OBJECT_SLIT_STARE_NIR', files)
+NIR.SetFiles('OBJECT_SLIT_NOD_NIR', files)
+
+
 
 
 # Static CALIBs
-NIR.SetFiles('MASTER_DARK_NIR',['static_calibs/MASTER_DARK_NIR_600.fits'])
-NIR.SetFiles('MASTER_FLAT_SLIT_NIR',['static_calibs/MASTER_FLAT_SLIT_NIR.fits'])
-NIR.SetFiles('ORDER_TAB_EDGES_SLIT_NIR',['static_calibs/ORDER_TAB_EDGES_SLIT_NIR.fits'])
-NIR.SetFiles('XSH_MOD_CFG_OPT_2D_NIR',['static_calibs/XSH_MOD_CFG_OPT_2D_NIR.fits'])
-NIR.SetFiles('RESPONSE_MERGE1D_SLIT_NIR',['static_calibs/RESPONSE_MERGE1D_SLIT_NIR.fits'])
-NIR.SetFiles('DISP_TAB_NIR',['static_calibs/DISP_TAB_NIR.fits'])
+try:
+    NIR.SetFiles('MASTER_DARK_NIR',['static_calibs/MASTER_DARK_NIR_%s.fits'%exptime])
+except:
+    raise InputError("NIR DARK does not exist with the correct exposure time. Get it.")
+
+if JH:
+    static_path = "static_calibs/JH/"
+else:
+    static_path = "static_calibs/"
+
+NIR.SetFiles('MASTER_FLAT_SLIT_NIR',['%sMASTER_FLAT_SLIT_NIR.fits'%static_path])
+NIR.SetFiles('ORDER_TAB_EDGES_SLIT_NIR',['%sORDER_TAB_EDGES_SLIT_NIR.fits'%static_path])
+NIR.SetFiles('XSH_MOD_CFG_OPT_2D_NIR',['%sXSH_MOD_CFG_OPT_2D_NIR.fits'%static_path])
+NIR.SetFiles('RESPONSE_MERGE1D_SLIT_NIR',['%sRESPONSE_MERGE1D_SLIT_NIR.fits'%static_path])
+NIR.SetFiles('DISP_TAB_NIR',['%sDISP_TAB_NIR.fits'%static_path])
 
 #REF-files:
-NIR.SetFiles("SPECTRAL_FORMAT_TAB_NIR",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SPECTRAL_FORMAT_TAB_NIR.fits"])
-NIR.SetFiles("ARC_LINE_LIST_NIR",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/ARC_LINE_LIST_AFC_NIR.fits"])
-NIR.SetFiles("XSH_MOD_CFG_TAB_NIR",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/XS_GMCT_110710A_NIR.fits"])
-NIR.SetFiles("FLUX_STD_CATALOG_NIR",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_star_catalog_NIR.fits'])
-NIR.SetFiles("ATMOS_EXT_NIR",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_paranal_extinct_model_NIR.fits'])
-NIR.SetFiles("SKY_LINE_LIST_NIR",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SKY_LINE_LIST_NIR.fits'])
-NIR.SetFiles('MASTER_BP_MAP_NIR',['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/BP_MAP_RP_NIR.fits'])
+if JH:
+    NIR.SetFiles("SPECTRAL_FORMAT_TAB_NIR",["%sSPECTRAL_FORMAT_TAB_%s_NIR.fits"%(static_path, "JH")])
+else:
+    NIR.SetFiles("SPECTRAL_FORMAT_TAB_NIR",["%sSPECTRAL_FORMAT_TAB_NIR.fits"%static_path])
+
+NIR.SetFiles("ARC_LINE_LIST_NIR",["%sARC_LINE_LIST_AFC_NIR.fits"%static_path])
+NIR.SetFiles("XSH_MOD_CFG_TAB_NIR",["%sXS_GMCT_110710A_NIR.fits"%static_path])
+NIR.SetFiles("FLUX_STD_CATALOG_NIR",['%sxsh_star_catalog_NIR.fits'%static_path])
+NIR.SetFiles("ATMOS_EXT_NIR",['%sxsh_paranal_extinct_model_NIR.fits'%static_path])
+NIR.SetFiles("SKY_LINE_LIST_NIR",['%sSKY_LINE_LIST_NIR.fits'%static_path])
+NIR.SetFiles('MASTER_BP_MAP_NIR',['%sBP_MAP_RP_NIR.fits'%static_path])
 
 #Run
 NIR.RunPipeline()

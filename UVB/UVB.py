@@ -61,9 +61,11 @@ UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 ############################################################
 
 # Input files
-UVB.SetFiles('OBJECT_SLIT_NOD_UVB', glob.glob('target/*'))
-# UVB.SetFiles('OBJECT_SLIT_STARE_UVB', glob.glob('test_data/*'))
+files = glob.glob('test_data/*') # /target
 
+# Object files
+# UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
+UVB.SetFiles('OBJECT_SLIT_NOD_UVB', files)
 
 # Static CALIBs
 UVB.SetFiles('MASTER_BIAS_UVB',['static_calibs/MASTER_BIAS_UVB.fits'])
@@ -74,13 +76,13 @@ UVB.SetFiles('RESPONSE_MERGE1D_SLIT_UVB',['static_calibs/RESPONSE_MERGE1D_SLIT_U
 UVB.SetFiles('DISP_TAB_UVB',['static_calibs/DISP_TAB_UVB.fits'])
 
 #REF-files:
-UVB.SetFiles("SPECTRAL_FORMAT_TAB_UVB",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SPECTRAL_FORMAT_TAB_UVB.fits"])
-UVB.SetFiles("ARC_LINE_LIST_UVB",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/ThAr_uvb_2012PBR.fits"])
-UVB.SetFiles("XSH_MOD_CFG_TAB_UVB",["/opt/local/share/esopipes/datastatic/xshoo-3.2.0/XS_GMCT_110710A_UVB.fits"])
-UVB.SetFiles("FLUX_STD_CATALOG_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_star_catalog_uvb.fits'])
-UVB.SetFiles("ATMOS_EXT_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/xsh_paranal_extinct_model_uvb.fits'])
-UVB.SetFiles("SKY_LINE_LIST_UVB",['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/SKY_LINE_LIST_UVB.fits'])
-UVB.SetFiles('MASTER_BP_MAP_UVB',['/opt/local/share/esopipes/datastatic/xshoo-3.2.0/BP_MAP_RP_UVB_1x2.fits'])
+UVB.SetFiles("SPECTRAL_FORMAT_TAB_UVB",["static_calibs/SPECTRAL_FORMAT_TAB_UVB.fits"])
+UVB.SetFiles("ARC_LINE_LIST_UVB",["static_calibs/ThAr_uvb_2012PBR.fits"])
+UVB.SetFiles("XSH_MOD_CFG_TAB_UVB",["static_calibs/XS_GMCT_110710A_UVB.fits"])
+UVB.SetFiles("FLUX_STD_CATALOG_UVB",['static_calibs/xsh_star_catalog_uvb.fits'])
+UVB.SetFiles("ATMOS_EXT_UVB",['static_calibs/xsh_paranal_extinct_model_uvb.fits'])
+UVB.SetFiles("SKY_LINE_LIST_UVB",['static_calibs/SKY_LINE_LIST_UVB.fits'])
+UVB.SetFiles('MASTER_BP_MAP_UVB',['static_calibs/BP_MAP_RP_UVB_1x2.fits'])
 
 #Run
 UVB.RunPipeline()

@@ -1,0 +1,358 @@
+
+Start time     : 2018-11-13T18:23:50
+Program name   : esorex
+Severity level : [ INFO  ] 
+
+18:23:50 [ INFO  ] : This is EsoRex, version 3.13.1
+18:23:50 [ INFO  ] : using the libraries: CPL = 7.1, CFITSIO = 3.41, WCSLIB = 5.17, FFTW (normal precision) = 3.3.5, FFTW (single precision) = 3.3.5-sse2, CPL FLOP counting is unavailable, enable with -DCPL_ADD_FLOPS
+18:23:50 [ INFO  ] : Invocation command line was: esorex --suppress-prefix=FALSE xsh_scired_slit_nod Output/xsh_scired_slit_nod_NIR.sof
+18:23:50 [ INFO  ] :   Keep Temporary File = no
+18:23:50 [ INFO  ] :   Xsh Debug Level = none
+18:23:50 [ INFO  ] :   *******************************************
+18:23:50 [ INFO  ] :   *** X-shooter Instrument Pipeline 3.2.0 ***
+18:23:50 [ INFO  ] :   ***  Recipe: xsh_scired_slit_nod 3.2.0  ***
+18:23:50 [ INFO  ] :   *******************************************
+18:23:50 [ INFO  ] :     Reduce science frames in SLIT configuration and nod mode
+18:23:50 [ INFO  ] :     Arm NIR, Mode SLIT Nb Orders 16, min: 11, max: 26
+18:23:50 [ INFO  ] :   RAW files
+18:23:50 [ INFO  ] :       RAW     OBJECT_SLIT_NOD_NIR  'test_data/JH/XSHOO.2018-10-21T01:06:42.566.fits'
+18:23:50 [ INFO  ] :       RAW     OBJECT_SLIT_NOD_NIR  'test_data/JH/XSHOO.2018-10-21T00:55:05.356.fits'
+18:23:50 [ INFO  ] :       RAW     OBJECT_SLIT_NOD_NIR  'test_data/JH/XSHOO.2018-10-21T01:18:21.104.fits'
+18:23:50 [ INFO  ] :       RAW     OBJECT_SLIT_NOD_NIR  'test_data/JH/XSHOO.2018-10-21T00:43:25.486.fits'
+18:23:50 [ INFO  ] :   CALIB files
+18:23:50 [ INFO  ] :       CALIB   SPECTRAL_FORMAT_TAB_NIR 'static_calibs/JH/SPECTRAL_FORMAT_TAB_JH_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   MASTER_FLAT_SLIT_NIR 'static_calibs/JH/MASTER_FLAT_SLIT_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   ORDER_TAB_EDGES_SLIT_NIR 'static_calibs/JH/ORDER_TAB_EDGES_SLIT_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   XSH_MOD_CFG_OPT_2D_NIR 'static_calibs/JH/XSH_MOD_CFG_OPT_2D_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   MASTER_DARK_NIR      'static_calibs/MASTER_DARK_NIR_600.fits'
+18:23:50 [ INFO  ] :       CALIB   MASTER_BP_MAP_NIR    'static_calibs/JH/BP_MAP_RP_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   DISP_TAB_NIR         'static_calibs/JH/DISP_TAB_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   FLUX_STD_CATALOG_NIR 'static_calibs/JH/xsh_star_catalog_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   ATMOS_EXT_NIR        'static_calibs/JH/xsh_paranal_extinct_model_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   RESPONSE_MERGE1D_SLIT_NIR 'static_calibs/JH/RESPONSE_MERGE1D_SLIT_NIR.fits'
+18:23:50 [ INFO  ] :       CALIB   XSH_MOD_CFG_TAB_NIR  'static_calibs/JH/XS_GMCT_110710A_NIR.fits'
+18:23:50 [WARNING] xsh_instrument_nir_is_JH:   JH band, special case
+18:23:50 [WARNING] xsh_instrument_nir_is_JH:     JH band, special case
+18:23:50 [ INFO  ] :       Use order tab: ORDER_TAB_EDGES_SLIT_NIR
+18:23:50 [ INFO  ] :     Use DISP TAB DISP_TAB_NIR
+18:23:50 [WARNING] xsh_instrument_nir_is_JH: JH band, special case
+18:23:50 [ INFO  ] :     BP_MAP_NL not provided
+18:23:50 [ INFO  ] :     Use order tab: ORDER_TAB_EDGES_SLIT_NIR
+18:23:50 [ INFO  ] :   RECIPE USE OPTIMISED 2D MODEL
+18:23:50 [ INFO  ] :   Use DISP TAB DISP_TAB_NIR
+18:23:50 [ INFO  ] :     Compute with MODEL the wave map and the slit map
+18:23:50 [ INFO  ] :       XSH_TEMP82_VAL=103.370000 [K]
+18:23:50 [ INFO  ] :         Generate physical model based wave and slit maps
+18:23:57 [ INFO  ] :          wave map frame SCI_SLIT_WAVE_MAP_NIR.fits SCI_SLIT_WAVE_MAP_NIR
+18:23:57 [ INFO  ] :          slit map frame SCI_SLIT_SLIT_MAP_NIR.fits SCI_SLIT_SLIT_MAP_NIR
+18:23:58 [ INFO  ] :   Remove crh (single frame)
+18:23:58 [ INFO  ] :   removecrhsingle_niter > 0
+18:24:15 [ INFO  ] :   name SCI_SLIT_NOD_NO_CRH_NIR_0.fits cumoffset -2.292941 0.572799 reloffset -2.292941 0.572799 nod_seq_number : A1
+18:24:15 [ INFO  ] :       size=1
+18:24:15 [ INFO  ] :   name SCI_SLIT_NOD_NO_CRH_NIR_1.fits cumoffset 2.207798 -0.551529 reloffset 4.500739 -1.124328 nod_seq_number : B1
+18:24:15 [ INFO  ] :       size=1
+18:24:16 [ INFO  ] :   name SCI_SLIT_NOD_NO_CRH_NIR_2.fits cumoffset 2.405023 -0.600798 reloffset 0.197225 -0.049269 nod_seq_number : B2
+18:24:16 [ INFO  ] :       size=1
+18:24:16 [ INFO  ] :   name SCI_SLIT_NOD_NO_CRH_NIR_3.fits cumoffset -2.277236 0.568875 reloffset -4.682259 1.169673 nod_seq_number : B3
+18:24:16 [ INFO  ] :       size=1
+18:24:17 [ INFO  ] :   Method fast
+18:24:17 [ INFO  ] :     Divide by flat
+18:24:17 [ INFO  ] :     sci name: SUBTRACTED_NOD_AB_0_NIR.fits flat name: static_calibs/JH/MASTER_FLAT_SLIT_NIR.fits
+18:24:17 [ INFO  ] :       SLIT : (-5.300,5.700) used only (-5.300,5.410) in 52 elts
+18:24:17 [ INFO  ] :           XSH_TEMP82_VAL=103.370000 [K]
+18:24:17 [ INFO  ] :         ===== Solution type MODEL
+18:24:23 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:23 [ INFO  ] :         OBJ CUM_(RA DEC) : -2.292941 0.572799 
+18:24:23 [ INFO  ] :         REL_(RA DEC) :  4.500739 -1.124328
+18:24:23 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 0.000000 0.000000
+18:24:23 [ INFO  ] :         COMPUTE shift in arcsec 0.000000 :
+18:24:23 [ INFO  ] :       SHIFT A-->B : 0.000000 in arcsec
+18:24:23 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:23 [ INFO  ] :         OBJ CUM_(RA DEC) : 2.207798 -0.551529 
+18:24:23 [ INFO  ] :         REL_(RA DEC) :  4.500739 -1.124328
+18:24:23 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 4.500739 -1.124328
+18:24:23 [ INFO  ] :         COMPUTE shift in arcsec -4.639048 :
+18:24:23 [ INFO  ] :       SHIFT A-->B : -4.620000 in arcsec
+18:24:24 [ INFO  ] :       SLIT : (-5.300,5.700) used only (-5.300,5.410) in 52 elts
+18:24:24 [ INFO  ] :           XSH_TEMP82_VAL=103.370000 [K]
+18:24:24 [ INFO  ] :         ===== Solution type MODEL
+18:24:29 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:29 [ INFO  ] :         OBJ CUM_(RA DEC) : -2.292941 0.572799 
+18:24:29 [ INFO  ] :         REL_(RA DEC) :  4.500739 -1.124328
+18:24:29 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 0.000000 0.000000
+18:24:29 [ INFO  ] :         COMPUTE shift in arcsec 0.000000 :
+18:24:29 [ INFO  ] :       SHIFT A-->B : 0.000000 in arcsec
+18:24:30 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:30 [ INFO  ] :         OBJ CUM_(RA DEC) : 2.207798 -0.551529 
+18:24:30 [ INFO  ] :         REL_(RA DEC) :  4.500739 -1.124328
+18:24:30 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 4.500739 -1.124328
+18:24:30 [ INFO  ] :         COMPUTE shift in arcsec -4.639048 :
+18:24:30 [ INFO  ] :       SHIFT A-->B : -4.620000 in arcsec
+18:24:31 [ INFO  ] :     Divide by flat
+18:24:31 [ INFO  ] :     sci name: SUBTRACTED_NOD_AB_1_NIR.fits flat name: static_calibs/JH/MASTER_FLAT_SLIT_NIR.fits
+18:24:31 [ INFO  ] :       SLIT : (-5.300,5.700) used only (-5.300,5.410) in 52 elts
+18:24:31 [ INFO  ] :           XSH_TEMP82_VAL=103.370000 [K]
+18:24:31 [ INFO  ] :         ===== Solution type MODEL
+18:24:36 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:36 [ INFO  ] :         OBJ CUM_(RA DEC) : 2.405023 -0.600798 
+18:24:36 [ INFO  ] :         REL_(RA DEC) :  -4.682259 1.169673
+18:24:36 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 4.697964 -1.173597
+18:24:36 [ INFO  ] :         COMPUTE shift in arcsec -4.842334 :
+18:24:36 [ INFO  ] :       SHIFT A-->B : -4.830000 in arcsec
+18:24:37 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:37 [ INFO  ] :         OBJ CUM_(RA DEC) : -2.277236 0.568875 
+18:24:37 [ INFO  ] :         REL_(RA DEC) :  -4.682259 1.169673
+18:24:37 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 0.015705 -0.003924
+18:24:37 [ INFO  ] :         COMPUTE shift in arcsec -0.016188 :
+18:24:37 [ INFO  ] :       SHIFT A-->B : 0.000000 in arcsec
+18:24:37 [ INFO  ] :       SLIT : (-5.300,5.700) used only (-5.300,5.410) in 52 elts
+18:24:37 [ INFO  ] :           XSH_TEMP82_VAL=103.370000 [K]
+18:24:37 [ INFO  ] :         ===== Solution type MODEL
+18:24:43 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:43 [ INFO  ] :         OBJ CUM_(RA DEC) : 2.405023 -0.600798 
+18:24:43 [ INFO  ] :         REL_(RA DEC) :  -4.682259 1.169673
+18:24:43 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 4.697964 -1.173597
+18:24:43 [ INFO  ] :         COMPUTE shift in arcsec -4.842334 :
+18:24:43 [ INFO  ] :       SHIFT A-->B : -4.830000 in arcsec
+18:24:44 [ INFO  ] :         POSANG 1.325997 (rad) REF CUM_(RA DEC) : -2.292941 0.572799 
+18:24:44 [ INFO  ] :         OBJ CUM_(RA DEC) : -2.277236 0.568875 
+18:24:44 [ INFO  ] :         REL_(RA DEC) :  -4.682259 1.169673
+18:24:44 [ INFO  ] :         COMPUTE OFF_(RA DEC) : 0.015705 -0.003924
+18:24:44 [ INFO  ] :         COMPUTE shift in arcsec -0.016188 :
+18:24:44 [ INFO  ] :       SHIFT A-->B : 0.000000 in arcsec
+18:24:45 [ INFO  ] :   ---xsh_combine_nod (method MEAN) - Nb frames = 4
+18:24:46 [ INFO  ] :   Combine nod slit : (-10.130000,5.410000) step 0.210000 nslit 74
+18:24:46 [ INFO  ] :   Nod combination save extra files to evaluate pixel scaling
+18:25:11 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:11 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:11 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:11 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:11 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   combine-nod: scale flagged pixel
+18:25:12 [ INFO  ] :   slit index: min -10.130000 max=5.410000
+18:25:13 [ INFO  ] :   Merge slit orders
+18:25:13 [WARNING] xsh_merge_ord_with_tag:       spectrum size slit is different from order size
+18:25:13 [ INFO  ] : Extract 1D order-by-order spectrum
+18:25:13 [ INFO  ] :     Extract method clean with tag
+18:25:13 [ INFO  ] :     nod_throw=5 slit_step=0.21 nslit=74 hslit=12
+18:25:13 [ INFO  ] :     after slit min: 25 max: 49
+18:25:13 [ INFO  ] :     Number of orders=14
+18:25:13 [ INFO  ] :     Object extraction limits: [26,49] [bin]/[-4.67,0.16] [arcsec]
+18:25:13 [ INFO  ] : Merge orders with 1D frame
+18:25:13 [ INFO  ] :   Merge slit orders
+18:25:14 [ INFO  ] :   No telluric mask
+18:25:19 [ INFO  ] :       Multiply by response function
+18:25:20 [ INFO  ] :       Merge slit orders
+18:25:20 [WARNING] xsh_merge_ord_with_tag:           spectrum size slit is different from order size
+18:25:20 [ INFO  ] :     tag=SCI_SLIT_ORDER1D_NIR
+18:25:20 [ INFO  ] :     file_tag1=SCI_SLIT_NORM_ORDER1D_NIR
+18:25:21 [ INFO  ] :       Multiply by response function
+18:25:21 [ INFO  ] :       Merge slit orders
+18:25:22 [ INFO  ] :     file_tag2=SCI_SLIT_FLUX_ORDER1D_NIR
+18:25:22 [ INFO  ] :   process frame SCI_SLIT_ORDER1D_NIR.fits SCI_SLIT_ORDER1D_NIR
+18:25:22 [ INFO  ] :   ORDER1D
+18:25:23 [ INFO  ] :   processed frame SCI_SLIT_ORDER1D_NIR
+18:25:23 [ INFO  ] :   process frame SCI_SLIT_MERGE1D_NIR.fits SCI_SLIT_MERGE1D_NIR
+18:25:23 [ INFO  ] :   MERGE1D
+18:25:23 [ INFO  ] :   processed frame SCI_SLIT_MERGE1D_NIR
+18:25:24 [ INFO  ] :   process frame SCI_SLIT_FLUX_ORDER1D_NIR.fits SCI_SLIT_FLUX_ORDER1D_NIR
+18:25:24 [ INFO  ] :   ORDER1D
+18:25:24 [ INFO  ] :   processed frame SCI_SLIT_FLUX_ORDER1D_NIR
+18:25:24 [ INFO  ] :   process frame SCI_SLIT_FLUX_MERGE1D_NIR.fits SCI_SLIT_FLUX_MERGE1D_NIR
+18:25:24 [ INFO  ] :   MERGE1D
+18:25:24 [ INFO  ] :   processed frame SCI_SLIT_FLUX_MERGE1D_NIR
+18:25:24 [ INFO  ] :   recipe_id=xsh_scired_slit_nod
+18:25:24 [ INFO  ] :   Final product name: SCI_SLIT_ORDER2D_NIR.fits
+18:25:25 [ INFO  ] :   Final product name: SCI_SLIT_ORDER1D_NIR.fits
+18:25:25 [ INFO  ] :   Fix key
+18:25:26 [WARNING] xsh_instrument_nir_is_JH:   JH band, special case
+18:25:26 [ INFO  ] :   recipe_id=xsh_scired_slit_nod
+18:25:26 [ INFO  ] :   Final product name: SCI_SLIT_WAVE_MAP_NIR.fits
+18:25:26 [ INFO  ] :   recipe_id=xsh_scired_slit_nod
+18:25:26 [ INFO  ] :   Final product name: SCI_SLIT_SLIT_MAP_NIR.fits
+18:25:26 [ INFO  ] :   recipe_id=xsh_scired_slit_nod
+18:25:26 [ INFO  ] :   Final product name: SCI_SLIT_FLUX_ORDER2D_NIR.fits
+18:25:26 [ INFO  ] :   Final product name: SCI_SLIT_FLUX_ORDER1D_NIR.fits
+18:25:26 [ INFO  ] :   Fix key
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_ORDER2D_NIR 'SCI_SLIT_ORDER2D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_ORDER1D_NIR 'SCI_SLIT_ORDER1D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_MERGE2D_NIR 'SCI_SLIT_MERGE2D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_MERGE1D_NIR 'SCI_SLIT_MERGE1D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_WAVE_MAP_NIR 'SCI_SLIT_WAVE_MAP_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_SLIT_MAP_NIR 'SCI_SLIT_SLIT_MAP_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_FLUX_ORDER2D_NIR 'SCI_SLIT_FLUX_ORDER2D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_FLUX_ORDER1D_NIR 'SCI_SLIT_FLUX_ORDER1D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_FLUX_MERGE2D_NIR 'SCI_SLIT_FLUX_MERGE2D_NIR.fits'
+18:25:27 [ INFO  ] : PRODUCT SCI_SLIT_FLUX_MERGE1D_NIR 'SCI_SLIT_FLUX_MERGE1D_NIR.fits'
+18:25:27 [ INFO  ] : ---- Deleting Temporary Files
+18:25:27 [ INFO  ] :     'cut_nir_HJ_ORDER_TAB_EDGES_SLIT_NIR.fits'
+18:25:27 [ INFO  ] :     'cut_nir_HJ_DISP_TAB_NIR.fits'
+18:25:27 [ INFO  ] :     'local_cfg_name_NIR.fits'
+18:25:27 [ INFO  ] :     'OBJECT_SLIT_NOD_PRE_0.fits'
+18:25:27 [ INFO  ] :     'OBJECT_SLIT_NOD_PRE_1.fits'
+18:25:27 [ INFO  ] :     'OBJECT_SLIT_NOD_PRE_2.fits'
+18:25:27 [ INFO  ] :     'OBJECT_SLIT_NOD_PRE_3.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NOD_NO_CRH_NIR_0.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NOD_NO_CRH_NIR_1.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NOD_NO_CRH_NIR_2.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NOD_NO_CRH_NIR_3.fits'
+18:25:27 [ INFO  ] :     'med_A1.fits'
+18:25:27 [ INFO  ] :     'med_A1.fits'
+18:25:27 [ INFO  ] :     'med_B1.fits'
+18:25:27 [ INFO  ] :     'med_B1.fits'
+18:25:27 [ INFO  ] :     'med_B2.fits'
+18:25:27 [ INFO  ] :     'med_B2.fits'
+18:25:27 [ INFO  ] :     'med_B3.fits'
+18:25:27 [ INFO  ] :     'med_B3.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'DIV2_FLATFIELD_NIR.fits'
+18:25:27 [ INFO  ] :     'local_cfg_name_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_REC2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'REC2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'MED_COR_DRL_REC2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT2_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'REC1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'local_cfg_name_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_REC2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'REC2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'MED_COR_DRL_REC2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT2_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'REC1_FAST_EFF_SUBTRACTED_NOD_AB_0_NIR.fits.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT1_FAST_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT1_FAST_EFF_SUBTRACTED_NOD_AB_0_NIR.fits'
+18:25:27 [ INFO  ] :     'DIV2_FLATFIELD_NIR.fits'
+18:25:27 [ INFO  ] :     'local_cfg_name_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_REC2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'REC2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'MED_COR_DRL_REC2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT2_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'REC1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT1_FAST_RECTIFIED_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'local_cfg_name_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_REC2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'TAB_REC2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'REC2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'MED_COR_DRL_REC2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT2_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'REC1_FAST_EFF_SUBTRACTED_NOD_AB_1_NIR.fits.fits'
+18:25:27 [ INFO  ] :     'DRL_SHIFT1_FAST_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'SHIFT1_FAST_EFF_SUBTRACTED_NOD_AB_1_NIR.fits'
+18:25:27 [ INFO  ] :     'input_resampled_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_0.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_1.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_2.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'input_resampled_shifted_3.fits'
+18:25:27 [ INFO  ] :     'DRL_SCI_SLIT_ORDER2D_NIR.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_ORDER1D_NIR_DRL.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NORM_ORDER2D_NIR.fits'
+18:25:27 [ INFO  ] :     'SCI_SLIT_NORM_ORDER1D_NIR.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_spc.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_ima.fits'
+18:25:27 [ INFO  ] :     'tmp_spc.fits'
+18:25:27 [WARNING] xsh_end: Recipe 'xsh_scired_slit_nod' produced 6 warning s (excluding this one)
+18:25:27 [ INFO  ] : Calculating product checksums
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0000.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0001.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0002.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0003.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0004.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0005.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0006.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0007.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0008.fits
+18:25:28 [ INFO  ] : Created product /Users/jonatanselsing/github/XSHPipelineManager/NIR/out_0009.fits
+18:25:28 [ INFO  ] : 10 products created
+18:25:28 [ INFO  ] : Recipe operation(s) took           98.1 seconds to complete.
+18:25:28 [ INFO  ] : Total size of 4 raw input frames  =    36.23 MB
+
+18:25:28 [ INFO  ] : => processing rate of     0.37 MB/sec 
+
