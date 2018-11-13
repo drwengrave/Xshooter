@@ -7,6 +7,7 @@
 from PipelineManager import *
 import glob
 from astropy.io import fits
+import numpy as np
 
 NIR = PipelineManager()
 NIR.SetOutputDir('Output')

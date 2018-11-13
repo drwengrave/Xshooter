@@ -5,6 +5,7 @@
 
 from PipelineManager import *
 import glob
+import numpy as np
 
 UVB = PipelineManager()
 UVB.SetOutputDir('Output')
