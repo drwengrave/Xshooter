@@ -18,46 +18,42 @@ NIR.SetOutputDir('Output')
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName = EsorexName
+SOFFileName1 = EsorexName
 
 NIR.DeclareNewRecipe(EsorexName)
-NIR.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_NOD_NIR", "1..n", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_DARK_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
-NIR.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
-
-NIR.EnableRecipe(SOFFileName)
+NIR.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_NIR", "1..n", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_DARK_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
+NIR.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName = EsorexName
+SOFFileName2 = EsorexName
 
 NIR.DeclareNewRecipe(EsorexName)
-NIR.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_STARE_NIR", "1..n", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_DARK_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
-NIR.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
-
-# NIR.EnableRecipe(SOFFileName)
+NIR.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_NIR", "1..n", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_DARK_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(SOFFileName2,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
+NIR.DeclareRecipeInputTag(SOFFileName2,"ATMOS_EXT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(SOFFileName2,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 #NIR.SetRecipeOptions(SOFFileName, "--sky-method=MEDIAN")#MEDIAN is more stable than bspline
 #NIR.SetRecipeOptions(SOFFileName, "--sky-bspline-order=4")
@@ -67,12 +63,25 @@ NIR.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 #NIR.SetRecipeOptions(SOFFileName, "--background-nb-y=50 --background-radius-y=40 --background-method=median --rectify-bin-lambda=.05 --rectify-bin-slit=.2 --removecrhsingle-niter=3 --extract-method=FULL --compute-map=TRUE --rectify-conserve-flux=FALSE --sky-subtract=TRUE --sky-bspline-nbkpts-first=500 --sky-bspline-nbkpts-second=500 --sky-method=MEDIAN  --rectify-radius=1 --mergeord-method=0")
 
 ############################################################
-###  INPUT-FILES
+###  INPUT-FILES: TO BE MODIFIED
 ############################################################
 
-# Input files
-# files = glob.glob('test_data/JH/*') # /target
-files = glob.glob('target/') # /target
+## FOLDER WITH IMAGES
+files = glob.glob('target/*') # /target
+
+##
+## NODDING MODE
+##
+NIR.EnableRecipe(SOFFileName1)
+NIR.SetFiles('OBJECT_SLIT_NOD_NIR', files)
+
+##
+## STARING MODE
+##
+#NIR.EnableRecipe(SOFFileName2)
+#NIR.SetFiles('OBJECT_SLIT_STARE_NIR', files)
+
+############################################################
 
 # Get exptime:
 exptime = [0]*len(files)
@@ -93,13 +102,6 @@ if not slit.count(slit[0]) == len(slit):
     raise TypeError("Input image list does not use the same slit.")
 
 JH = slit[0].endswith('JH')
-
-# Object files
-# NIR.SetFiles('OBJECT_SLIT_STARE_NIR', files)
-NIR.SetFiles('OBJECT_SLIT_NOD_NIR', files)
-
-
-
 
 # Static CALIBs
 try:
@@ -126,8 +128,8 @@ else:
 
 NIR.SetFiles("ARC_LINE_LIST_NIR",["%sARC_LINE_LIST_AFC_NIR.fits"%static_path])
 NIR.SetFiles("XSH_MOD_CFG_TAB_NIR",["%sXS_GMCT_110710A_NIR.fits"%static_path])
-NIR.SetFiles("FLUX_STD_CATALOG_NIR",['%sxsh_star_catalog_NIR.fits'%static_path])
-NIR.SetFiles("ATMOS_EXT_NIR",['%sxsh_paranal_extinct_model_NIR.fits'%static_path])
+NIR.SetFiles("FLUX_STD_CATALOG_NIR",['%sxsh_star_catalog_nir.fits'%static_path])
+NIR.SetFiles("ATMOS_EXT_NIR",['%sxsh_paranal_extinct_model_nir.fits'%static_path])
 NIR.SetFiles("SKY_LINE_LIST_NIR",['%sSKY_LINE_LIST_NIR.fits'%static_path])
 NIR.SetFiles('MASTER_BP_MAP_NIR',['%sBP_MAP_RP_NIR.fits'%static_path])
 

@@ -17,57 +17,62 @@ UVB.SetOutputDir('Output')
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName = EsorexName
+SOFFileName1 = EsorexName
 
 UVB.DeclareNewRecipe(EsorexName)
-UVB.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_NOD_UVB", "1..n", "any", "100k")
-UVB.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BIAS_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_UVB", "?", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_UVB", "?", "1x1", "400k")
-UVB.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
-UVB.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
-
-UVB.EnableRecipe(SOFFileName)
+UVB.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_UVB", "1..n", "any", "100k")
+UVB.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_BIAS_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_UVB", "?", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_UVB", "?", "1x1", "400k")
+UVB.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
+UVB.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName = EsorexName
+SOFFileName2 = EsorexName
 
 UVB.DeclareNewRecipe(EsorexName)
-UVB.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_STARE_UVB", "1", "any", "any")
-UVB.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BIAS_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_UVB", "?", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_UVB", "?", "1x1", "400k")
-UVB.DeclareRecipeInputTag(SOFFileName, "FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
-UVB.DeclareRecipeInputTag(SOFFileName, "ATMOS_EXT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
-
-# UVB.EnableRecipe(SOFFileName)
+UVB.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_UVB", "1", "any", "any")
+UVB.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_BIAS_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_UVB", "?", "match", "match")
+UVB.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_UVB", "?", "1x1", "400k")
+UVB.DeclareRecipeInputTag(SOFFileName2, "FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
+UVB.DeclareRecipeInputTag(SOFFileName2, "ATMOS_EXT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(SOFFileName2, "RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 
 ############################################################
-###  INPUT-FILES
+###  INPUT-FILES: TO BE MODIFIED
 ############################################################
 
-# Input files
-# files = glob.glob('test_data/*') # /target
-files = glob.glob('target/') # /target
+## FOLDER WITH IMAGES
+files = glob.glob('target/*') # /target
 
-# Object files
-# UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
+##
+## NODDING MODE
+##
+UVB.EnableRecipe(SOFFileName1)
 UVB.SetFiles('OBJECT_SLIT_NOD_UVB', files)
+
+##
+## STARING MODE
+##
+#UVB.EnableRecipe(SOFFileName2)
+#UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
+
+############################################################
 
 # Static CALIBs
 UVB.SetFiles('MASTER_BIAS_UVB',['static_calibs/MASTER_BIAS_UVB.fits'])
