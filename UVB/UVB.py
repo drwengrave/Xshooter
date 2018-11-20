@@ -11,47 +11,44 @@ UVB = PipelineManager()
 UVB.SetOutputDir('Output')
 
 
-
 ############################################################
 ###  XSH_SCIRED_SLIT_NOD
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName1 = EsorexName
 
 UVB.DeclareNewRecipe(EsorexName)
-UVB.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_UVB", "1..n", "any", "100k")
-UVB.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_BIAS_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_UVB", "?", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_UVB", "?", "1x1", "400k")
-UVB.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
-UVB.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_NOD_UVB", "1..n", "any", "100k")
+UVB.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_BIAS_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_UVB", "?", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "DISP_TAB_UVB", "?", "1x1", "400k")
+UVB.DeclareRecipeInputTag(EsorexName,"FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
+UVB.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(EsorexName,"RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName2 = EsorexName
 
 UVB.DeclareNewRecipe(EsorexName)
-UVB.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_UVB", "1", "any", "any")
-UVB.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_BIAS_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_UVB", "1", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
-UVB.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_UVB", "?", "match", "match")
-UVB.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_UVB", "?", "1x1", "400k")
-UVB.DeclareRecipeInputTag(SOFFileName2, "FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
-UVB.DeclareRecipeInputTag(SOFFileName2, "ATMOS_EXT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName2, "RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
-UVB.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_STARE_UVB", "1", "any", "any")
+UVB.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_BIAS_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_UVB", "1", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_UVB", "1", "-", "-")
+UVB.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_UVB", "?", "match", "match")
+UVB.DeclareRecipeInputTag(EsorexName, "DISP_TAB_UVB", "?", "1x1", "400k")
+UVB.DeclareRecipeInputTag(EsorexName, "FLUX_STD_CATALOG_UVB", "?", "-" ,"-")
+UVB.DeclareRecipeInputTag(EsorexName, "ATMOS_EXT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(EsorexName, "RESPONSE_MERGE1D_SLIT_UVB", "?", "-" , "-")
+UVB.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 
 ############################################################
 ###  INPUT-FILES: TO BE MODIFIED
@@ -59,18 +56,19 @@ UVB.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 
 ## FOLDER WITH IMAGES
 files = glob.glob('target/*') # /target
+# files = glob.glob('test_data/*') # /target
 
 ##
 ## NODDING MODE
 ##
-UVB.EnableRecipe(SOFFileName1)
+UVB.EnableRecipe('xsh_scired_slit_nod')
 UVB.SetFiles('OBJECT_SLIT_NOD_UVB', files)
 
 ##
 ## STARING MODE
 ##
-#UVB.EnableRecipe(SOFFileName2)
-#UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
+# UVB.EnableRecipe('xsh_scired_slit_stare')
+# UVB.SetFiles('OBJECT_SLIT_STARE_UVB', files)
 
 ############################################################
 
@@ -99,6 +97,5 @@ out1d = glob.glob("Output/*FLUX_MERGE1D_UVB*.fits")
 fitsfile = fits.open(out1d[0])
 wave = 10.*(np.arange((np.shape(fitsfile[0].data)[0]))*fitsfile[0].header['CDELT1']+fitsfile[0].header['CRVAL1'])
 np.savetxt("Output/UVB_ASCII1D_spectrum.dat", list(zip(wave, fitsfile[0].data, fitsfile[1].data)), fmt='%1.4e %1.4e %1.4e')
-
 
 

@@ -3,7 +3,12 @@
 #Martin Sparre, DARK, 2nd November 2011
 #version 5.9.0
 
-import commands
+import sys
+pyversion = sys.version_info[0]
+if pyversion == 2:
+    import commands as shellrun
+elif pyversion == 3:
+    import subprocess as shellrun
 import os.path
 import pickle
 import sys
@@ -61,7 +66,7 @@ def GetFiles(InputFiles, BinX, BinY, ReadOut):
                 List.append(F)
 
     else:
-        print("Something is wrong... 329846fsd") #this is not supposed to happen
+        print("Something is wrong... 329846fsd")#this is not supposed to happen
 
     return List
 
@@ -150,15 +155,16 @@ class Recipe:
 
     def Execute(self,Files):
         #set Arm:
-        if 'UVB' in Files.keys()[0]:
+
+        if 'UVB' in list(Files.keys())[0]:
             Arm = 'UVB'
-        elif 'VIS' in Files.keys()[0]:
+        elif 'VIS' in list(Files.keys())[0]:
             Arm = 'VIS'
-        elif 'NIR' in Files.keys()[0]:
+        elif 'NIR' in list(Files.keys())[0]:
             Arm = 'NIR'
         else:
             Arm = 'Arm'
-            print('\tcouldnt determine ARM. Files.keys()[0]=', Files.keys()[0])
+            print('\tcouldnt determine ARM. list(Files.keys())[0]=', list(Files.keys())[0])
 
         self.Arm = Arm
 
@@ -166,7 +172,7 @@ class Recipe:
         if self.GetBinX_match() == '' and self.GetBinY_match() == '' and self.GetReadOut_match() == '':
             for Tag in self.GetInputTags():
                 if Tag.GetType() == 'RAW' or Tag.GetType() == 'raw':
-                    if Tag.GetTagName() not in Files.keys():
+                    if Tag.GetTagName() not in list(Files.keys()):
                         print("\t --Error: Tag: "+Tag.GetTagName()+" not defined\n\n")
                         return None
                     BinX_match = Files[Tag.GetTagName()][0].GetBinX()
@@ -235,7 +241,7 @@ class Recipe:
             else:
                 print('\twarning: could not determine binning. suylpoih9')
 
-            if Tag.GetTagName() not in Files.keys():
+            if Tag.GetTagName() not in list(Files.keys()):
                 if '?' not in Tag.GetNFiles():
                     print('\n\tA necessary file is missing for tag '+Tag.GetTagName() + '. Esorex disabled.')
                     RunEsorex = False
@@ -281,11 +287,11 @@ class Recipe:
         if RunEsorex == True:
             EsorexCommand = ESOREX_EXE + ' ' + ESOREX_OPTIONS + ' ' + self.GetEsorexOptions() + ' ' + self.GetEsorexRecipeName() + ' ' + RECIPE_OPTIONS + ' ' + self.GetRecipeOptions() + ' ' + CurrentSOFName
             print('\tExecuting: '+EsorexCommand)
-            commands.getoutput(EsorexCommand)
+            shellrun.getoutput(EsorexCommand)
             print("\tEsorex completed.\n")
 
             #rename and insert into dictionary
-            Output_string=commands.getoutput('ls out_*.fits')
+            Output_string=shellrun.getoutput('ls out_*.fits')
             if 'ls:' in Output_string:
                 print('\tError: No output-files from recipe. Recipe ('+self.GetRecipeName()+') crashed.\n\n')
                 Output_string = ''
@@ -294,19 +300,19 @@ class Recipe:
 
             for OutputFile in Output_string.split():
                 OutputFileHeader =  fits.getheader(OutputFile)
-                if 'ESO PRO CATG' in OutputFileHeader.keys():
+                if 'ESO PRO CATG' in list(OutputFileHeader.keys()):
                     NewSofTag = OutputFileHeader['ESO PRO CATG']
                 else:
                     print('Something wrong when determining ESO PRO CATG... u8q3209ejncvsd')
                     sys.exit()
 
                 FitsFileName = self.Manager.GetOutputDir() + self.GetRecipeName() +'_' + NewSofTag + '_' + Arm + '_' + BinX_match + 'x' + BinY_match + '_' + ReadOut_match + '.fits'
-                commands.getoutput('mv '+OutputFile+' '+FitsFileName)
+                shellrun.getoutput('mv '+OutputFile+' '+FitsFileName)
 
                 print('\t'+OutputFile+' -> '+FitsFileName)
 
                 #put the fits-file into the Files-dictionary
-                if NewSofTag not in Files.keys():
+                if NewSofTag not in list(Files.keys()):
                     Files[NewSofTag] = [TFile(FitsFileName,NewSofTag)]
                 else:
                     #the file is inserted at index 0, so it will replace the old file in case of '*'
@@ -314,9 +320,9 @@ class Recipe:
 
                 print('\tFile '+FitsFileName+' with tag '+ NewSofTag + ' added.')
             if os.path.exists('esorex.log') == True:
-                commands.getoutput('mv esorex.log ' + self.Manager.GetOutputDir() + 'esorex_'+self.GetRecipeName()+'_'+Arm+'.log')
+                shellrun.getoutput('mv esorex.log ' + self.Manager.GetOutputDir() + 'esorex_'+self.GetRecipeName()+'_'+Arm+'.log')
                 print('\n\tEsorex-log saved: '+self.Manager.GetOutputDir() +'esorex_'+self.GetRecipeName()+'_'+Arm+'.log')
-            commands.getoutput('mv *.paf ' + self.Manager.GetOutputDir() + '/.')
+            shellrun.getoutput('mv *.paf ' + self.Manager.GetOutputDir() + '/.')
         return Files
 
 
@@ -383,7 +389,7 @@ class PipelineManager:
         self.CurrentRecipe = ''
 
     def PrintFilesInDictionary(self):
-        for tag in self.Files.keys():
+        for tag in self.list(list(Files.keys())):
             print(tag)
             print('\t','SOF-tag','Fitsfile','BinX','BinY','Readout','Arm')
             for f in self.Files[tag]:
@@ -393,10 +399,9 @@ class PipelineManager:
     def RunPipeline(self):
         #self.CurrentRecipe is set '' from start. It can have another
         #value if the pipeline was started from a restart file
-
         if os.path.exists(self.OutputDir) == False:
             print('Directory with name '+self.OutputDir+' does not exist.')
-            commands.getoutput('mkdir '+self.OutputDir)
+            shellrun.getoutput('mkdir '+self.OutputDir)
             print('Directory with name '+ self.OutputDir +' has now been created.\n')
 
 
@@ -446,21 +451,21 @@ class TFile:
         ThisHeader =  fits.getheader(FitsName)
 
         #Binning X
-        if 'ESO DET WIN1 BINX' in ThisHeader.keys():
+        if 'ESO DET WIN1 BINX' in list(ThisHeader.keys()):
             self.BinX = str(ThisHeader['ESO DET WIN1 BINX'])
         else:
             #print("Warning: ESO DET WIN1 BINX not in header")
             self.BinX = ""
 
         #Binning Y
-        if 'ESO DET WIN1 BINY' in ThisHeader.keys():
+        if 'ESO DET WIN1 BINY' in list(ThisHeader.keys()):
             self.BinY = str(ThisHeader['ESO DET WIN1 BINY'])
         else:
             #print("Warning: ESO DET WIN1 BINY not in header")
             self.BinY = ""
 
         #Arm
-        if 'ESO SEQ ARM' in ThisHeader.keys():
+        if 'ESO SEQ ARM' in list(ThisHeader.keys()):
             self.ARM = str(ThisHeader['ESO SEQ ARM'])
         else:
             #print(FitsName)
@@ -470,7 +475,7 @@ class TFile:
 
 
         #Readout
-        if 'ESO DET READ CLOCK' in ThisHeader.keys():
+        if 'ESO DET READ CLOCK' in list(ThisHeader.keys()):
             self.ReadOut = str(ThisHeader['ESO DET READ CLOCK']).split('/')[0]
         else:
             #print("Warning: ESO DET READ CLOCK not in header")

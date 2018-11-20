@@ -18,42 +18,40 @@ NIR.SetOutputDir('Output')
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName1 = EsorexName
 
 NIR.DeclareNewRecipe(EsorexName)
-NIR.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_NIR", "1..n", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_DARK_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
-NIR.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_NOD_NIR", "1..n", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_DARK_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "DISP_TAB_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
+NIR.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(EsorexName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName2 = EsorexName
 
 NIR.DeclareNewRecipe(EsorexName)
-NIR.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_NIR", "1..n", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_DARK_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_NIR", "?", "-", "-")
-NIR.DeclareRecipeInputTag(SOFFileName2,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
-NIR.DeclareRecipeInputTag(SOFFileName2,"ATMOS_EXT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName2,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
-NIR.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_STARE_NIR", "1..n", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_NIR", "1", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_DARK_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName, "DISP_TAB_NIR", "?", "-", "-")
+NIR.DeclareRecipeInputTag(EsorexName,"FLUX_STD_CATALOG_NIR", "?", "-" ,"-")
+NIR.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(EsorexName,"RESPONSE_MERGE1D_SLIT_NIR", "?", "-" , "-")
+NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 #NIR.SetRecipeOptions(SOFFileName, "--sky-method=MEDIAN")#MEDIAN is more stable than bspline
 #NIR.SetRecipeOptions(SOFFileName, "--sky-bspline-order=4")
@@ -68,18 +66,19 @@ NIR.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 ## FOLDER WITH IMAGES
 files = glob.glob('target/*') # /target
+# files = glob.glob('test_data/*') # /target
 
 ##
 ## NODDING MODE
 ##
-NIR.EnableRecipe(SOFFileName1)
+NIR.EnableRecipe('xsh_scired_slit_nod')
 NIR.SetFiles('OBJECT_SLIT_NOD_NIR', files)
 
 ##
 ## STARING MODE
 ##
-#NIR.EnableRecipe(SOFFileName2)
-#NIR.SetFiles('OBJECT_SLIT_STARE_NIR', files)
+# NIR.EnableRecipe('xsh_scired_slit_stare')
+# NIR.SetFiles('OBJECT_SLIT_STARE_NIR', files)
 
 ############################################################
 

@@ -16,40 +16,38 @@ VIS.SetOutputDir('Output')
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName1 = EsorexName
 
 VIS.DeclareNewRecipe(EsorexName)
-VIS.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_VIS", "1..n", "any", "100k")
-VIS.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_BIAS_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_VIS", "?", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_VIS", "?", "1x1", "400k")
-VIS.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
-VIS.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
-VIS.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_NOD_VIS", "1..n", "any", "100k")
+VIS.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_BIAS_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_VIS", "?", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "DISP_TAB_VIS", "?", "1x1", "400k")
+VIS.DeclareRecipeInputTag(EsorexName,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
+VIS.DeclareRecipeInputTag(EsorexName,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName2 = EsorexName
 
 VIS.DeclareNewRecipe(EsorexName)
-VIS.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_VIS", "1..n", "any", "100k")
-VIS.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_BIAS_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_VIS", "?", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_VIS", "?", "1x1", "400k")
-VIS.DeclareRecipeInputTag(SOFFileName2,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
-VIS.DeclareRecipeInputTag(SOFFileName2,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
-VIS.DeclareRecipeInputTag(SOFFileName2,"ATMOS_EXT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(EsorexName, "OBJECT_SLIT_STARE_VIS", "1..n", "any", "100k")
+VIS.DeclareRecipeInputTag(EsorexName, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_BIAS_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(EsorexName, "MASTER_BP_MAP_VIS", "?", "match", "match")
+VIS.DeclareRecipeInputTag(EsorexName, "DISP_TAB_VIS", "?", "1x1", "400k")
+VIS.DeclareRecipeInputTag(EsorexName,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
+VIS.DeclareRecipeInputTag(EsorexName,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ############################################################
 ###  INPUT-FILES: TO BE MODIFIED
@@ -57,18 +55,19 @@ VIS.DeclareRecipeInputTag(SOFFileName2,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ## FOLDER WITH IMAGES
 files = glob.glob('target/*') # /target
+# files = glob.glob('test_data/*') # /target
 
 ##
 ## NODDING MODE
 ##
-VIS.EnableRecipe(SOFFileName1)
+VIS.EnableRecipe('xsh_scired_slit_nod')
 VIS.SetFiles('OBJECT_SLIT_NOD_VIS', files)
 
 ##
 ## STARING MODE
 ##
-#VIS.EnableRecipe(SOFFileName2)
-#VIS.SetFiles('OBJECT_SLIT_STARE_VIS', files)
+# VIS.EnableRecipe('xsh_scired_slit_stare')
+# VIS.SetFiles('OBJECT_SLIT_STARE_VIS', files)
 
 ############################################################
 
