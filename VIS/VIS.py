@@ -16,58 +16,61 @@ VIS.SetOutputDir('Output')
 ############################################################
 
 EsorexName='xsh_scired_slit_nod'
-SOFFileName = EsorexName
+SOFFileName1 = EsorexName
 
 VIS.DeclareNewRecipe(EsorexName)
-VIS.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_NOD_VIS", "1..n", "any", "100k")
-VIS.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_BIAS_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_VIS", "?", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_VIS", "?", "1x1", "400k")
-VIS.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
-VIS.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
-VIS.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_VIS", "?", "-" , "-")
-
-VIS.EnableRecipe(SOFFileName)
-
-#VIS.SetRecipeOptions(SOFFileName,'--rectify-bin-lambda=0.025')
+VIS.DeclareRecipeInputTag(SOFFileName1, "OBJECT_SLIT_NOD_VIS", "1..n", "any", "100k")
+VIS.DeclareRecipeInputTag(SOFFileName1, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_BIAS_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName1, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName1, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(SOFFileName1, "MASTER_BP_MAP_VIS", "?", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName1, "DISP_TAB_VIS", "?", "1x1", "400k")
+VIS.DeclareRecipeInputTag(SOFFileName1,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
+VIS.DeclareRecipeInputTag(SOFFileName1,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(SOFFileName1,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ############################################################
 ###  XSH_SCIRED_SLIT_STARE
 ############################################################
 
 EsorexName='xsh_scired_slit_stare'
-SOFFileName = EsorexName
+SOFFileName2 = EsorexName
 
 VIS.DeclareNewRecipe(EsorexName)
-VIS.DeclareRecipeInputTag(SOFFileName, "OBJECT_SLIT_STARE_VIS", "1..n", "any", "100k")
-VIS.DeclareRecipeInputTag(SOFFileName, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_BIAS_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
-VIS.DeclareRecipeInputTag(SOFFileName, "MASTER_BP_MAP_VIS", "?", "match", "match")
-VIS.DeclareRecipeInputTag(SOFFileName, "DISP_TAB_VIS", "?", "1x1", "400k")
-VIS.DeclareRecipeInputTag(SOFFileName,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
-VIS.DeclareRecipeInputTag(SOFFileName,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
-VIS.DeclareRecipeInputTag(SOFFileName,"ATMOS_EXT_VIS", "?", "-" , "-")
-
-#VIS.EnableRecipe(SOFFileName)
+VIS.DeclareRecipeInputTag(SOFFileName2, "OBJECT_SLIT_STARE_VIS", "1..n", "any", "100k")
+VIS.DeclareRecipeInputTag(SOFFileName2, "SPECTRAL_FORMAT_TAB_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_FLAT_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_BIAS_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName2, "ORDER_TAB_EDGES_SLIT_VIS", "1", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName2, "XSH_MOD_CFG_OPT_2D_VIS", "1", "-", "-")
+VIS.DeclareRecipeInputTag(SOFFileName2, "MASTER_BP_MAP_VIS", "?", "match", "match")
+VIS.DeclareRecipeInputTag(SOFFileName2, "DISP_TAB_VIS", "?", "1x1", "400k")
+VIS.DeclareRecipeInputTag(SOFFileName2,"FLUX_STD_CATALOG_VIS", "?", "-" ,"-")
+VIS.DeclareRecipeInputTag(SOFFileName2,"RESPONSE_MERGE1D_SLIT_VIS", "?", "-" , "-")
+VIS.DeclareRecipeInputTag(SOFFileName2,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ############################################################
-###  INPUT-FILES
+###  INPUT-FILES: TO BE MODIFIED
 ############################################################
 
-# Input files
-files = glob.glob('test_data/*') # /target
-# files = glob.glob('target/') # /target
+## FOLDER WITH IMAGES
+files = glob.glob('target/*') # /target
 
-# Object files
-# VIS.SetFiles('OBJECT_SLIT_STARE_VIS', files)
+##
+## NODDING MODE
+##
+VIS.EnableRecipe(SOFFileName1)
 VIS.SetFiles('OBJECT_SLIT_NOD_VIS', files)
+
+##
+## STARING MODE
+##
+#VIS.EnableRecipe(SOFFileName2)
+#VIS.SetFiles('OBJECT_SLIT_STARE_VIS', files)
+
+############################################################
 
 # Static CALIBs
 VIS.SetFiles('MASTER_BIAS_VIS',['static_calibs/MASTER_BIAS_VIS.fits'])
@@ -81,8 +84,8 @@ VIS.SetFiles('DISP_TAB_VIS',['static_calibs/DISP_TAB_VIS.fits'])
 VIS.SetFiles("SPECTRAL_FORMAT_TAB_VIS",["static_calibs/SPECTRAL_FORMAT_TAB_VIS.fits"])
 VIS.SetFiles("ARC_LINE_LIST_VIS",["static_calibs/ThAr_vis_custom.fits"])
 VIS.SetFiles("XSH_MOD_CFG_TAB_VIS",["static_calibs/XS_GMCT_110710A_VIS.fits"])
-VIS.SetFiles("FLUX_STD_CATALOG_VIS",['static_calibs/xsh_star_catalog_VIS.fits'])
-VIS.SetFiles("ATMOS_EXT_VIS",['static_calibs/xsh_paranal_extinct_model_VIS.fits'])
+VIS.SetFiles("FLUX_STD_CATALOG_VIS",['static_calibs/xsh_star_catalog_vis.fits'])
+VIS.SetFiles("ATMOS_EXT_VIS",['static_calibs/xsh_paranal_extinct_model_vis.fits'])
 VIS.SetFiles("SKY_LINE_LIST_VIS",['static_calibs/SKY_LINE_LIST_VIS.fits'])
 VIS.SetFiles('MASTER_BP_MAP_VIS',['static_calibs/BP_MAP_RP_VIS_1x2.fits'])
 
