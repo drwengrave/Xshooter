@@ -66,7 +66,10 @@ NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 
 ## FOLDER WITH IMAGES
 files = glob.glob('target/*') # /target
-# files = glob.glob('test_data/*') # /target
+
+# files = glob.glob('test_data/*') #
+# files = [ii for ii in files if ii.endswith(".fits")]
+
 
 ##
 ## NODDING MODE

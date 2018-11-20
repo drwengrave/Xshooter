@@ -55,7 +55,7 @@ VIS.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ## FOLDER WITH IMAGES
 files = glob.glob('target/*') # /target
-# files = glob.glob('test_data/*') # /target
+# files = glob.glob('test_data/*')
 
 ##
 ## NODDING MODE
@@ -96,8 +96,5 @@ out1d = glob.glob("Output/*FLUX_MERGE1D_VIS*.fits")
 fitsfile = fits.open(out1d[0])
 wave = 10.*(np.arange((np.shape(fitsfile[0].data)[0]))*fitsfile[0].header['CDELT1']+fitsfile[0].header['CRVAL1'])
 np.savetxt("Output/VIS_ASCII1D_spectrum.dat", list(zip(wave, fitsfile[0].data, fitsfile[1].data)), fmt='%1.4e %1.4e %1.4e')
-
-
-
 
 
