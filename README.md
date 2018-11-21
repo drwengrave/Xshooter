@@ -48,6 +48,14 @@ where ARM=UVB, VIS or NIR.
 
 NOTE: You have to be in the actual directory to run this command, otherwise the path to the python script need to be given.
 
+The small shell script xsh_qr.sh has been made for convenience. It will run the reduction for all arms, and spawn new processes, thus running the three arms simultaneously. 
+
+It can be run using
+
+```
+sh xsh_qr.sh
+```
+
 The pipeline is made to be robust and there is not a lot of flexibility allowed. A few things can be changed in the ARM.py scripts though (clearly indicated in the scripts).
 
 You can change the folder name in which you have the data to be reduced. The default is: XSHPipelineManager/ARM/target. We recommend the same folder structure. The fits images have to be unzipped.
@@ -61,4 +69,4 @@ The pipeline checks whether observation is done in the K-blocking mode or not.
 
 Wavelengths are in air. No extinction correction is applied to the final products.
 
-See https://github.com/martinsparre/XSHPipelineManager for the original source. All credit original scirpts goes toMartin Sparre.
+See https://github.com/martinsparre/XSHPipelineManager for the original source. All credit for the original scripts goes to Martin Sparre.
