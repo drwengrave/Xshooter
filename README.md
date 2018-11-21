@@ -61,4 +61,4 @@ The pipeline checks whether observation is done in the K-blocking mode or not.
 
 Wavelengths are in air. No extinction correction is applied to the final products.
 
-See https://github.com/martinsparre/XSHPipelineManager for the original source. All credit for this goes to Martin Sparre.
+See https://github.com/martinsparre/XSHPipelineManager for the original source. All credit original scirpts goes toMartin Sparre.
