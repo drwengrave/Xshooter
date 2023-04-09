@@ -1,5 +1,7 @@
 N.B. repository copied from the original version located at https://github.com/jselsing/XSH_QuickReduction and re-adapted for the ENGRAVE Data reduction workshop 2023
 
+A new file ("final_output.py") has been included in the main folder. It generates a txt spectrum that has been stacked by all the three arms, and that has been binned to work with classification codes.
+
 ---------------------------------------------------------------------------------------------------------------------
 
 These routines along with associated static calibration files should allow the quick reduction of X-shooter spectra.
