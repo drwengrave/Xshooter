@@ -69,7 +69,7 @@ NIR.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_NIR", "1", "-", "-")
 ## FOLDER WITH IMAGES
 # files = glob.glob(script_path+"/target/*") # /target
 
-files = glob.glob(script_path+"/test_data/*") #
+files = glob.glob(script_path+"/input/*") #
 files = [ii for ii in files if ii.endswith(".fits")]
 
 
