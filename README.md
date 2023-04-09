@@ -1,4 +1,8 @@
-These rutines along with associated static calibration files should allow the quick reduction of X-shooter spectra.
+N.B. repository copied from the original version located at https://github.com/jselsing/XSH_QuickReduction and re-adapted for the ENGRAVE Data reduction workshop 2023
+
+---------------------------------------------------------------------------------------------------------------------
+
+These routines along with associated static calibration files should allow the quick reduction of X-shooter spectra.
 
 This script relies the ESO X-shooter pipeline, as well as Python and astropy. Information on the ESO pipelines can found at https://www.eso.org/sci/software/pipelines/, as well as instructions on how to install. This quick-reduction pipeline relies specifically on Esorex - the ESO recipe excecution framework. Before execution, run
 
