@@ -57,7 +57,7 @@ VIS.DeclareRecipeInputTag(EsorexName,"ATMOS_EXT_VIS", "?", "-" , "-")
 
 ## FOLDER WITH IMAGES
 # files = glob.glob(script_path+"/target/*") # /target
-files = glob.glob(script_path+"/test_data/*")
+files = glob.glob(script_path+"/input/*")
 
 ##
 ## NODDING MODE
