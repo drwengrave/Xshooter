@@ -58,7 +58,7 @@ UVB.DeclareRecipeInputTag(EsorexName, "XSH_MOD_CFG_TAB_UVB", "1", "-", "-")
 
 ## FOLDER WITH IMAGES
 # files = glob.glob(script_path+"/target/*") # /target
-files = glob.glob(script_path+"/test_data/*")
+files = glob.glob(script_path+"/input/*")
 
 ##
 ## NODDING MODE
